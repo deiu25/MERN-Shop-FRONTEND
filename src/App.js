@@ -118,9 +118,9 @@ function App() {
             <Route path="/admin/reviews" isAdmin={true} element={<PrivateComponent element={ProductReviews} />} />
         </Routes>
       </div>
-        {!loading && (!isAuthenticated || user.role !== 'admin') && (
-      <Footer />
-    )}
+      {!loading && (!isAuthenticated || (user && user.role !== 'admin')) && (
+  <Footer />
+)}
     </div>
     </Router>
   );
