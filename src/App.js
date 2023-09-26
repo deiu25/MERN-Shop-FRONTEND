@@ -117,11 +117,10 @@ function App() {
             <Route path="/admin/user/:id" isAdmin={true} element={<PrivateComponent element={UpdateUser} />} />
             <Route path="/admin/reviews" isAdmin={true} element={<PrivateComponent element={ProductReviews} />} />
         </Routes>
+
+        </div>
+        <Footer />
       </div>
-      {!loading && (!isAuthenticated || (user && user.role !== 'admin')) && (
-  <Footer />
-)}
-    </div>
     </Router>
   );
 }
